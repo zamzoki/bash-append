@@ -1,0 +1,4 @@
+existing line #1
+existing line #2
+appended text
+appended text #2
