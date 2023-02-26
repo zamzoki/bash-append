@@ -2,7 +2,7 @@ FROM alpine:3.17.2
 
 ARG REPO="bash-append"
 ARG SCRIPT_FILE="append.sh"
-ARG WORKSHOP_NAME="workshop"
+ARG TARGET_VOLUME_PATH="workshop"
 
 RUN apk add --no-cache git \
     && git clone --depth 1 --branch main https://github.com/zamzoki/${REPO}.git \
@@ -10,6 +10,6 @@ RUN apk add --no-cache git \
     && chmod 755 /${SCRIPT_FILE} \
     && rm -r ${REPO} \
     && apk del git \
-    && mkdir ${WORKSHOP_NAME}
+    && mkdir ${TARGET_VOLUME_PATH}
 
 ENTRYPOINT [ "/bin/sh", "append.sh" ]
