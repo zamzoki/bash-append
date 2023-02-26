@@ -1,3 +1,5 @@
+#!/bin/sh
+
 while getopts 't:f:h' OPTION; do
   case "$OPTION" in
     t)
