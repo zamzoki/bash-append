@@ -1,5 +1,7 @@
 #!/bin/sh
 
+WORKDIR="/workshop"
+
 while getopts 't:f:h' OPTION; do
   case "$OPTION" in
     t)
@@ -20,4 +22,4 @@ while getopts 't:f:h' OPTION; do
   esac
 done
 
-echo $TEXT >> $FILE_PATH
+echo $TEXT >> $WORKDIR/$FILE_PATH
